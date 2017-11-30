@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hangman</title>
+    <script src = 'jquery/dist/jquery.js'></script>
+    <script src = '/socket.io/socket.io.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        const socket = io.connect();
+        //Take this out later
+        socket.on("word", word =>{
+          $('h2').text(word)
+        });
+
+        //Display guessed letters
+        socket.on('letters', letters =>{
+          $('.letters').text(letters)
+        });
+
+        //Display underscores
+        socket.on('arr', arr =>{
+          $('h3').text(arr)
+        });
+
+        //Game status
+        socket.on('game_status', () =>{
+          alert("Game over, Play Again")
+          //
+          // $('.game_state').html('<button>Play Again</button>')
+        });
+
+        // $('button').click()=>{
+        //   socket.emit("playAgain")
+        // })
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <h1>Guess a letter to complete this word: </h1>
+    <h2></h2>
+    <h3></h3>
+    <% if(game_over == false){ %>
+      <form class="" action="/process" method="post">
+        <input type="text" name="letter" value="" required=true>
+        <input type="submit" name="submit" value="Guess">
+      </form>
+    <% } else { %>
+      <div class="game_state">
+        <p>Game Over. Play Again !!!</p>
+      <!-- <button>Play Again</button> -->
+      <form  action="/" method="get">
+      <input type="submit" name="submit" value="Play Again">
+    </form>
+      </div>
+      <% } %>
+    <h4>Wrong Letters(5 guesses!)</h4>
+    <div class="letters"></div>
+
+  </body>
+</html>
