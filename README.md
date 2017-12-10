@@ -9,6 +9,8 @@ Hangman is a guessing game for two or more players. Program gives a random word,
 Framework : Express ( Express.js , Socket.io and ejs )
 Language : Javascript and Unix
 ```
+*I created this in a couple of hours during a hackathon. This can be improved upon greatly. Wait for more commits ;)*
+
 ## How To Play and Rules :
 1. Computer(Program) is the executioner.will think of a word or short phrase an mark out blanks (short lines) for each letter of each word. Separate words with either a slash, a fairly wide gap, or place words on separate lines.
 2. Multiple player can join and play for same word
@@ -21,4 +23,4 @@ Language : Javascript and Unix
 1. N number of players can play at same time. 
 2. Number of wrong chances : 5
 
-*PS: I created this in a couple of hours during a hackathon. This can be improved upon greatly. Wait for more commits ;)*
+
