@@ -4,7 +4,7 @@
 **Scope:**
 Hangman is a guessing game for two or more players. Program gives a random word, phrase or sentence and the other player tries to guess it by suggesting letters or numbers, within a certain number of guesses.
 
-Envirment : 
+## Envirment : 
 ```
 Framework : Express ( Express.js , Socket.io and ejs )
 Language : Javascript and Unix
